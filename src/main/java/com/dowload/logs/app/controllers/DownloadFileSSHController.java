@@ -27,8 +27,8 @@ public class DownloadFileSSHController {
     @ApiOperation(value = "Everything download logs", tags = { "Logs" })
     @ApiResponses(value = { @ApiResponse(code = 200, message = "Success", response = StreamingResponseBody.class), @ApiResponse(code = 500, message = "Failure") })
     @GetMapping(value = "", produces = { /*"application/zip", */MediaType.APPLICATION_OCTET_STREAM_VALUE, MediaType.TEXT_PLAIN_VALUE })
-    public ResponseEntity<Object> donwload( @RequestParam(defaultValue = "ws", required = true) String folder,
-            @RequestParam(defaultValue = "cebalrai.reddipres.cl", required = true) String host, @RequestParam(defaultValue = "ws.zip", required = true) String zipName ) {
+    public ResponseEntity<Object> donwload( @RequestParam(required = true) String folder,
+            @RequestParam(required = true) String host, @RequestParam(required = true) String zipName ) {
         return service.downloadLogs(folder, host, zipName);
     }
 }
