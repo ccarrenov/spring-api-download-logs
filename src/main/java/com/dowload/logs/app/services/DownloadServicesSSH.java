@@ -41,6 +41,15 @@ public class DownloadServicesSSH {
         String log = "% [donwload] folder[%] host[%] zipName[%]";
         LOGGER.info(StringUtils.replaceValues(log, '%', LogMsgCtes.INIT, folder, host, zipName));
         File file = new File(zipName);
+        boolean fileCreate = false;
+        if (!file.exists()) {
+            try {
+                fileCreate = file.createNewFile();
+            } catch (IOException e) {
+                LOGGER.error(e);
+            }
+            LOGGER.info(zipName + " create " + fileCreate);
+        }
         InputStreamResource resource = null;
         String basePath = System.getenv("BASE_PATH");
         String user = System.getenv("USER_HOST");
