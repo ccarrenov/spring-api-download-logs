@@ -6,8 +6,8 @@ Project web service download file by ssh and compress zip file.
 
 ## ENVIRONMENT VALUES:
 
-| #BASE_PATH | #USER_HOST | #PASS_HOST | #PORT |
-| /path/directory | username | password | 22 |
+#BASE_PATH | #USER_HOST | #PASS_HOST | #PORT
+/path/directory | username | password | 22
 
 ## ENVIRONMENT ECLIPSE
 
